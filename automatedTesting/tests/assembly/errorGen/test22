@@ -1,0 +1,2 @@
+movf R1 $4
+hlt

@@ -1,0 +1,10 @@
+mov R1 $2
+mov R2 $4
+div R1 R2
+div R1 R2
+div R1 R2
+div R1 R2
+div R1 R2
+div R1 R2
+div R1 R2
+hlt

@@ -1,0 +1,9 @@
+var x 
+movf R1 $2.0
+movf R2 $3.25 
+xor R1 R2 R2
+st R2 x
+cmp R1 R2
+jlt bye
+bye: addf R2 R2 R2
+hlt

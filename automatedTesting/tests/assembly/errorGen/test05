@@ -1,0 +1,4 @@
+mov R2 $5
+var y
+mov R3 y
+hlt

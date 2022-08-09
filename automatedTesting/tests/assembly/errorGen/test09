@@ -1,0 +1,9 @@
+hlt
+var a
+var b
+var c
+add R1 $100
+st R0 x
+st R0 c
+cmp R1 R2
+hlt

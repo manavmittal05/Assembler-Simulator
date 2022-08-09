@@ -1,0 +1,23 @@
+var a
+var b
+lab1: add R1 R2 R0
+sub	R1 R2 R0
+mov	R1 $10
+mov	R0 R1
+mov R5 FLAGS
+ld R5 x
+st R5 x
+mul R1 R1 R6
+div	R1 R3
+rs R1 $20
+ls R1 $10
+xor	R1 R2 R0		
+lab2: or R1 R1 R0
+and R1 R2 R0
+not R5 R1
+cmp	R1 R6
+jmp lab1
+jlt	lab1
+jgt lab1
+je lab1
+hlt

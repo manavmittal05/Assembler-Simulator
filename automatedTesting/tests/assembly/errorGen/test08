@@ -1,0 +1,7 @@
+mov	R1 $255
+mov	R1 $0
+mov	R1 $-12
+mov	R1 $300
+rs R2 $4
+ls R2 $9
+hlt

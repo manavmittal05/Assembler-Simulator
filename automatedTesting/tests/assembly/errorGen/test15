@@ -1,0 +1,2 @@
+add  FLAGS R0 R1
+hlt

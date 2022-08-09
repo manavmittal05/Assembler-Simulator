@@ -1,0 +1,32 @@
+var ct
+var a
+var b
+mov R0 $0
+mov R1 $1
+mov R2 $1
+mov R3 $0
+mov R4 $0
+mov R5 $8
+start: ld R0 ct
+add R1 R0 R0
+st R0 ct
+st R2 a
+st R3 b
+cmp R2 R3
+jgt if
+jmp else
+if: add R2 R3 R3
+mov FLAGS R4
+and R5 R4 R4
+cmp R4 R5
+je overflow
+jmp start
+else: add R2 R3 R2 
+mov FLAGS R4
+and R4 R5 R4
+cmp R5 R4
+je overflow
+jmp start
+overflow: ld R2 a
+ld R3 b
+hlt

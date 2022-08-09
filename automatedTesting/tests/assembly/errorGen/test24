@@ -1,0 +1,6 @@
+movf R1 $1.25
+movf R2 $1.5
+addf R1 R2 R3
+subf R1 R2 R4
+movf R5 $0.5
+hlt

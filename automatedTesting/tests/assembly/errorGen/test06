@@ -1,0 +1,4 @@
+var a
+add R3 R1 R2
+add R3 $10
+hlt

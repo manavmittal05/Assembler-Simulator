@@ -1,0 +1,9 @@
+var label
+mov R1 $40
+mov R2 $41
+cmp R1 R2
+mov R3 FLAGS
+mov R4 $10
+cmp R3 R4
+jgt label
+label: hlt

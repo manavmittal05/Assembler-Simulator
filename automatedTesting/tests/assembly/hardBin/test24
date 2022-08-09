@@ -1,0 +1,12 @@
+var floatContainer
+movf R1 $4.0
+mov R2 $4
+cmp R2 R1
+jgt storeFloatIfGreaterThanInt
+storeFloatIfGreaterThanInt: st R1 floatContainer
+add R1 R2 R3
+addf R1 R2 R4
+cmp R3 R4
+jlt decrease
+decrease: subf R4 R3 R4
+hlt

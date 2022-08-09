@@ -1,0 +1,12 @@
+movf R1 $4.0
+movf R2 $2.0
+addf R1 R2 R3
+subf R1 R2 R3
+addf R1 R2 R3
+subf R1 R2 R3
+addf R1 R2 R3
+subf R1 R2 R3
+addf R1 R2 R3
+subf R1 R2 R3
+addf R1 R3 R2
+hlt

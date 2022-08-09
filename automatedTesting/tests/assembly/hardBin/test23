@@ -1,0 +1,6 @@
+var x
+movf R1 $4.0
+mov R2 $4
+addf R1 R2 R3
+st R3 x
+hlt

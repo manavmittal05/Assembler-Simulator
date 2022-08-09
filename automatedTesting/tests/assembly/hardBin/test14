@@ -1,0 +1,15 @@
+var x
+var y
+var z
+mov R1 $8
+mov R2 $9
+mov R3 $0
+mov R4 $255
+st R1 x
+st R2 y
+st R3 z
+cmp R2 R1
+jgt lab1
+lab1:	add R1 R2 R3
+    	jmp end
+end: hlt

@@ -1,0 +1,25 @@
+var f
+var ct
+var c
+mov R1 $5
+mov R2 $1
+mov R5 $8
+st R2 f
+lab1: ld R6 ct
+ld R3 f
+mul R1 R3 R3
+mov FLAGS R4
+and R4 R5 R4
+cmp R4 R5
+je wrong
+add R2 R6 R6
+st R6 ct
+st R3 f
+sub R1 R2 R1
+mov FLAGS R4
+and R4 R5 R4
+cmp R4 R5
+je right
+jmp lab1
+right: st R2 c
+wrong: hlt

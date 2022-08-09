@@ -1,0 +1,6 @@
+movf R1 $2.5
+movf R2 $4.75 
+subf R2 R1 R2
+cmp R1 R2
+jgt exit
+exit: hlt

@@ -1,0 +1,4 @@
+mov R0 $20
+mov R1 $10
+label:				sub R0 R1 R2
+hlt

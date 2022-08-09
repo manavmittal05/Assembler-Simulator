@@ -1,0 +1,4 @@
+var x
+movf R1 $4.0001
+st R1 x
+hlt

@@ -1,0 +1,3 @@
+var R1
+mov R2 R1
+hlt

@@ -1,0 +1,3 @@
+var x
+mov R1 $2.74
+hlt
