@@ -354,5 +354,5 @@ for i in memory:
 matplotlib.pyplot.scatter(x, y, alpha=0.8)
 matplotlib.pyplot.xlabel("Cycle")
 matplotlib.pyplot.ylabel("Memory Address")
-matplotlib.pyplot.xticks(x)
+#matplotlib.pyplot.xticks(x)
 matplotlib.pyplot.show()
