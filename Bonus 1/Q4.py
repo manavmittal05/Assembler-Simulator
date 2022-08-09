@@ -3,7 +3,7 @@ import matplotlib.pyplot
 import struct
 
 program = [x for x in sys.stdin.read().split('\n') if x != '']
-#program = [x for x in input().split() if x != '']
+# program = [x for x in input().split() if x != '']
 program_counter = 0
 flags = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
 file_registers = {'000': '0000000000000000',
@@ -117,21 +117,6 @@ def binTofloat(number):
     return val
 
 
-# def floatTobin(number):
-#     float_part = number % 1
-#     decimal_part = int(number)
-#     binary = format(decimal_part, '0b')
-#     exponent = len(binary) - 1
-#     for _ in range(8):
-#         float_part *= 2
-#         if float_part >= 1:
-#             float_part %= 1
-#             binary += '1'
-#             continue
-#         binary += '0'
-#     val = '00000000' + format(exponent, '03b') + binary[1:6]
-#     return val
-
 def floatTobin(num):
     bits, = struct.unpack('!I', struct.pack('!f', num))
     bin_num = "{:032b}".format(bits)
@@ -146,7 +131,7 @@ def f_add(instruction):
     value = binTofloat(file_registers[operand1]) + binTofloat(file_registers[operand2])
     if value > 252:
         flags = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
-        flags[-4] = 1
+        flags[-4] = '1'
         flag_affected = True
         file_registers[result] = '0000000011111111'
     else:
@@ -157,10 +142,10 @@ def f_add(instruction):
 def f_sub(instruction):
     global flags, flag_affected
     result, operand1, operand2 = fetch_typeA(instruction)
-    value = binTofloat(file_registers[operand1]) + binTofloat(file_registers[operand2])
+    value = binTofloat(file_registers[operand1]) - binTofloat(file_registers[operand2])
     if value < 1:
         flags = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
-        flags[-4] = 1
+        flags[-4] = '1'
         flag_affected = True
         file_registers[result] = format(0, '016b')
     else:
@@ -170,7 +155,7 @@ def f_sub(instruction):
 
 def f_mov(instruction):
     register, immediate = fetch_typeB(instruction)
-    file_registers[register] = '00000000' + floatTobin(binTofloat(immediate))
+    file_registers[register] = floatTobin(binTofloat('00000000'+immediate))
     print_reg_state()
 
 
@@ -354,5 +339,4 @@ for i in memory:
 matplotlib.pyplot.scatter(x, y, alpha=0.8)
 matplotlib.pyplot.xlabel("Cycle")
 matplotlib.pyplot.ylabel("Memory Address")
-#matplotlib.pyplot.xticks(x)
 matplotlib.pyplot.show()
